@@ -5,6 +5,7 @@ import com.example.elearningmobile.model.AuthenticationResponse;
 import com.example.elearningmobile.model.AuthenticationVm;
 import com.example.elearningmobile.model.OutboundUserRequest;
 import com.example.elearningmobile.model.RegistrationPostVm;
+import com.example.elearningmobile.model.VerifyPostVM;
 import com.example.elearningmobile.ultity.Constants;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -17,6 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.Call;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface AuthApi {
@@ -38,6 +40,12 @@ public interface AuthApi {
 
     @POST("register")
     Call<AuthenticationVm> register(@Body RegistrationPostVm registrationPostVm);
+
+    @POST("verify")
+    Call<Void> verify(@Body VerifyPostVM verifyPostVM);
+
+    @POST("resend")
+    Call<String> resend(@Path("email") String email);
 
     @POST("/api/v1/auth/outbound/authentication/mobile")
     Call<AuthenticationVm> outboundAuthenticate(@Body OutboundUserRequest outboundUserRequest);

@@ -63,9 +63,10 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/redcart"
                 android:textSize="12dp"
-                android:id="@+id/phone_number_error_message"
+                android:id="@+id/last_name_error_message"
                 />
             <EditText
+                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Nhập email"
