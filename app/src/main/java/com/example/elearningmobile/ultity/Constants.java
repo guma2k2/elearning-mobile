@@ -1,13 +1,12 @@
 package com.example.elearningmobile.ultity;
 
 public class Constants {
-    public static final String BASE_URL = "http://192.168.1.133:8080/api/v1/";
+    public static final String BASE_URL = "http://192.168.1.215:8080/api/v1/";
 
 
     public static final String AUTH_URL = BASE_URL + "auth/";
 
     public static final String STUDENT_URL = BASE_URL ;
-
 
     public static final String MEDIA_URL = BASE_URL + "medias/";
 

@@ -252,8 +252,6 @@ public class CourseDetailActivity extends AppCompatActivity {
                                 }
                             });
 
-
-
                         } else {
                             redirectToLoginPage();
                         }
@@ -282,19 +280,6 @@ public class CourseDetailActivity extends AppCompatActivity {
                 ZaloPaySDK.getInstance().payOrder(CourseDetailActivity.this, token, "demozpdk://app", new PayOrderListener() {
                     @Override
                     public void onPaymentSucceeded(final String transactionId, final String transToken, final String appTransID) {
-                        OrderApi.orderApi.updateOrderStatus(bearerToken, orderId, "SUCCESS").enqueue(new Callback<Void>() {
-                            @Override
-                            public void onResponse(Call<Void> call, Response<Void> response) {
-                                if (response.isSuccessful()) {
-
-                                }
-                            }
-
-                            @Override
-                            public void onFailure(Call<Void> call, Throwable t) {
-
-                            }
-                        });
                         PaymentPostVM paymentPostVM = new PaymentPostVM();
                         paymentPostVM.setAmount(course.getPrice());
                         paymentPostVM.setBankCode(transactionId);
